@@ -14,5 +14,10 @@
 </ul>
 
 <div>
-<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/txtnotes/refs/heads/main/screenshots/Screenshot_2024-09-26-22-55-00-835_com.txtnotes.jpg" style="width:300px;"/>
+<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/screenshots/Screenshot_20241027_035250.png" style="width:500px;"/>
+</div>
+
+<div>
+<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/screenshots/Screenshot_20241027_035346.png" style="width:300px;"/>
+  <img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/screenshots/Screenshot_20241027_035042.png" style="width:300px;"/>
 </div>
