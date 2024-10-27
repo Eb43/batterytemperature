@@ -27,6 +27,8 @@
 
 <h2>Температура батареи Android</h1>
 
+<p>Скачать: <a href="https://github.com/Eb43/batterytemperature/blob/main/batterytemperature.apk">https://github.com/Eb43/batterytemperature/blob/main/batterytemperature.apk</a></p>
+
 <p>Это приложение для Android отображает температуру батареи смартфона в режиме реального времени. Температуру батареи можно увидеть прямо в панели уведомлений или строке состояния, что позволяет быстро проверить её без лишних усилий.</p>
 
 <p>Знание температуры батареи помогает поддерживать её здоровье и продлить срок службы. Если батарея перегревается выше 40 градусов Цельсия, она изнашивается быстрее. В экстремальных случаях, при температуре выше 50 градусов Цельсия, батарея может загореться.</p>
@@ -52,6 +54,8 @@
 
 <h2>Temperatura de la batería en Android</h2>
 
+<p>Descargar: <a href="https://github.com/Eb43/batterytemperature/blob/main/batterytemperature.apk">https://github.com/Eb43/batterytemperature/blob/main/batterytemperature.apk</a></p>
+
 <p>Esta aplicación para Android muestra la temperatura de la batería del smartphone en tiempo real. La temperatura de la batería se puede ver directamente en la barra de notificaciones o en la barra de estado, ofreciendo un acceso rápido sin esfuerzo.</p>
 
 <p>Conocer la temperatura de la batería puede ayudar a mantener su salud general y prolongar su vida útil. Si la batería se sobrecalienta por encima de los 40 grados Celsius, se degrada más rápido. En casos extremos, con temperaturas superiores a los 50 grados Celsius, la batería puede incendiarse.</p>
@@ -76,6 +80,8 @@
 
 
 <h2>Android Batterietemperatur</h2>
+
+<p>Herunterladen: <a href="https://github.com/Eb43/batterytemperature/blob/main/batterytemperature.apk">https://github.com/Eb43/batterytemperature/blob/main/batterytemperature.apk</a></p>
 
 <p>Diese Android-App zeigt die Batterietemperatur des Smartphones in Echtzeit an. Die Temperatur der Batterie kann direkt im Benachrichtigungsbereich oder in der Statusleiste angezeigt werden, sodass man sie auf einen Blick sehen kann, ohne große Anstrengung.</p>
 
