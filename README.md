@@ -1,0 +1,2 @@
+# batterytemperature
+Android battery temperature
