@@ -7,7 +7,21 @@
     android:layout_centerHorizontal="true"
     android:padding="16dp">
 
-
+    <TextView
+        android:id="@+id/eb43githubio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="eb43.github.io"
+        android:textAlignment="center"
+        android:textColor="#D4EFF3"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <!-- RadioGroup for Text Color Selection -->
 
 
