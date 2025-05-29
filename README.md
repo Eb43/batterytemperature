@@ -2,7 +2,7 @@
 
 <p>&#128190; &nbsp Download: <a href="https://github.com/Eb43/batterytemperature/blob/main/batterytemperature.apk">https://github.com/Eb43/batterytemperature/blob/main/batterytemperature.apk</a> 
 <div>
-<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/screenshots/download.jpg" style="width:300px; display: inline-block; margin-left:30px;"/>
+<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/screenshots/download.jpg" style="width:700px; display: inline-block; margin-left:30px;"/>
 </div>
                
 <p>This Android app that displays the smartphone's battery temperature in real-time. The battery temperature can be seen directly in the notification shade or status bar, offering a quick glance without any efforts.</p>
