@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    namespace 'com.batterytemperature'
+    namespace 'barilyuk.batterytemperature'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.batterytemperature"
-        minSdk 21
+        applicationId "barilyuk.batterytemperature"
+        minSdk 26
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -35,4 +35,5 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+
 }

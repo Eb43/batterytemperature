@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Temperatura de Batería</string>
+    
+    <!-- Main Activity -->
+    <string name="battery_temperature_label">Temperatura de Batería:</string>
+    <string name="log_for_label">Registrar por:</string>
+    <string name="start_logging">Iniciar Registro</string>
+    <string name="stop_logging">Detener Registro</string>
+    <string name="logfilepath">Log file path: /storage/emulated/0/Download/battery_temperature_log.csv</string>
+    <string name="ring_alarm_at">Sonar alarma a:</string>
+    <string name="degrees_celsius">°C</string>
+    <string name="enable_temperature_alarm">Activar alarma de temperatura</string>
+    <string name="enable_auto_start">Activar\nInicio\nAutomático</string>
+    <string name="kill_app_exit">🚫 ☠ ❌ \n Cerrar app \n y \n Salir</string>
+    <string name="notification_icon_text_color">Color de texto del\nícono de notificación:</string>
+    <string name="black">Negro</string>
+    <string name="white">Blanco</string>
+    <string name="log_file_prefix">Archivo de registro: </string>
+    
+    <!-- Validation messages -->
+    <string name="please_enter_duration">Por favor ingrese la duración</string>
+    <string name="please_enter_valid_number">Por favor ingrese un número válido</string>
+    <string name="integer_only_validation">🔢 \n ❌23.7  ❌31.2; \n ✅23 ✅31</string>
+    <string name="log_file_not_found">Archivo de registro no encontrado</string>
+    <string name="share_log_file">Compartir archivo de registro</string>
+    <string name="temperature_logging_finished">Registro de temperatura terminado</string>
+    
+    <!-- Dialog -->
+    <string name="autostart_permission_title">Permiso de Inicio Automático Necesario</string>
+    <string name="autostart_permission_message">Active el permiso de inicio automático para asegurar que las notificaciones funcionen correctamente después del reinicio.</string>
+    <string name="open_settings">ABRIR CONFIGURACIÓN</string>
+    <string name="ok">OK</string>
+    
+    <!-- Service notifications -->
+    <string name="battery_temperature_notification_title">Temperatura de batería</string>
+    <string name="battery_temp_with_value">🌡 Temperatura de batería: %1$s ℃</string>
+    <string name="temperature_value_celsius">%1$s ℃</string>
+    <string name="temperature_alarm_title">¡Alarma de Temperatura!</string>
+    <string name="temperature_alarm_text">Actual: %1$.1f°C (Límite: %2$.1f°C)</string>
+    <string name="stop_alarm">Detener Alarma</string>
+    
+    <!-- Logging events -->
+    <string name="logging_started">Registro Iniciado</string>
+    <string name="logging_stopped">Registro Detenido</string>
+    <string name="logging_expired">Registro Expirado</string>
+    <string name="temperature_change">Cambio de Temperatura</string>
+
+    <string-array name="time_units">
+        <item>minutos</item>
+        <item>horas</item>
+        <item>días</item>
+        <item>meses</item>
+    </string-array>
+</resources>

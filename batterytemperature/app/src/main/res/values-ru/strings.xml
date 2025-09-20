@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Температура Батареи</string>
+    
+    <!-- Main Activity -->
+    <string name="battery_temperature_label">Температура Батареи:</string>
+    <string name="log_for_label">Записать:</string>
+    <string name="start_logging">Начать Запись</string>
+    <string name="stop_logging">Остановить Запись</string>
+    <string name="logfilepath">Путь к файлу записи: /storage/emulated/0/Download/battery_temperature_log.csv</string>
+    <string name="ring_alarm_at">Сигнал при:</string>
+    <string name="degrees_celsius">°C</string>
+    <string name="enable_temperature_alarm">Включить сигнал температуры</string>
+    <string name="enable_auto_start">Включить\nАвто\nЗапуск</string>
+    <string name="kill_app_exit">🚫 ☠ ❌ \n Закрыть \n приложение \n и выйти</string>
+    <string name="notification_icon_text_color">Цвет текста значка\nуведомления:</string>
+    <string name="black">Чёрный</string>
+    <string name="white">Белый</string>
+    <string name="log_file_prefix">Файл логов: </string>
+    
+    <!-- Validation messages -->
+    <string name="please_enter_duration">Пожалуйста, введите продолжительность</string>
+    <string name="please_enter_valid_number">Пожалуйста, введите корректное число</string>
+    <string name="integer_only_validation">🔢 \n ❌23.7  ❌31.2; \n ✅23 ✅31</string>
+    <string name="log_file_not_found">Файл логов не найден</string>
+    <string name="share_log_file">Поделиться файлом логов</string>
+    <string name="temperature_logging_finished">Запись температуры завершена</string>
+    
+    <!-- Dialog -->
+    <string name="autostart_permission_title">Требуется Разрешение на Автозапуск</string>
+    <string name="autostart_permission_message">Включите разрешение автозапуска для надёжной работы уведомлений после перезагрузки.</string>
+    <string name="open_settings">ОТКРЫТЬ НАСТРОЙКИ</string>
+    <string name="ok">ОК</string>
+    
+    <!-- Service notifications -->
+    <string name="battery_temperature_notification_title">Температура батареи</string>
+    <string name="battery_temp_with_value">🌡 Температура батареи: %1$s ℃</string>
+    <string name="temperature_value_celsius">%1$s ℃</string>
+    <string name="temperature_alarm_title">Сигнал Температуры!</string>
+    <string name="temperature_alarm_text">Текущая: %1$.1f°C (Порог: %2$.1f°C)</string>
+    <string name="stop_alarm">Остановить Сигнал</string>
+    
+    <!-- Logging events -->
+    <string name="logging_started">Запись Начата</string>
+    <string name="logging_stopped">Запись Остановлена</string>
+    <string name="logging_expired">Запись Истекла</string>
+    <string name="temperature_change">Изменение Температуры</string>
+
+    <string-array name="time_units">
+        <item>минут</item>
+        <item>часов</item>
+        <item>дней</item>
+        <item>месяцев</item>
+    </string-array>
+</resources>

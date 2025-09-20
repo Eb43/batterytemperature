@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Battery Temperature</string>
+
+    <!-- Main Activity -->
+    <string name="battery_temperature_label">Battery Temperature:</string>
+    <string name="log_for_label">Log for:</string>
+    <string name="start_logging">Start Logging</string>
+    <string name="stop_logging">Stop Logging</string>
+    <string name="logfilepath">Log file path: /storage/emulated/0/Download/battery_temperature_log.csv</string>
+    <string name="ring_alarm_at">Ring alarm at:</string>
+    <string name="degrees_celsius">°C</string>
+    <string name="enable_temperature_alarm">Enable temperature alarm</string>
+    <string name="enable_auto_start">Enable\nAuto\nStart</string>
+    <string name="kill_app_exit">🚫 ☠ ❌ \n Kill app \n &amp; \n Exit</string>
+    <string name="notification_icon_text_color">Notification icon\ntext color:</string>
+    <string name="black">Black</string>
+    <string name="white">White</string>
+    <string name="log_file_prefix">Log file: </string>
+
+    <!-- Validation messages -->
+    <string name="please_enter_duration">Please enter duration</string>
+    <string name="please_enter_valid_number">Please enter a valid number</string>
+    <string name="integer_only_validation">🔢 \n ❌23.7  ❌31.2; \n ✅23 ✅31</string>
+    <string name="log_file_not_found">Log file not found</string>
+    <string name="share_log_file">Share log file</string>
+    <string name="temperature_logging_finished">Temperature logging finished</string>
+
+    <!-- Dialog -->
+    <string name="autostart_permission_title">Autostart Permission Needed</string>
+    <string name="autostart_permission_message">Enable autostart permission to ensure notifications work reliably after reboot.</string>
+    <string name="open_settings">OPEN SETTINGS</string>
+    <string name="ok">OK</string>
+
+    <!-- Service notifications -->
+    <string name="battery_temperature_notification_title">Battery temperature</string>
+    <string name="battery_temp_with_value">🌡 Battery temperature: %1$s ℃</string>
+    <string name="temperature_value_celsius">%1$s ℃</string>
+    <string name="temperature_alarm_title">Temperature Alarm!</string>
+    <string name="temperature_alarm_text">Current: %1$.1f°C (Threshold: %2$.1f°C)</string>
+    <string name="stop_alarm">Stop Alarm</string>
+
+    <!-- Logging events -->
+    <string name="logging_started">Logging Started</string>
+    <string name="logging_stopped">Logging Stopped</string>
+    <string name="logging_expired">Logging Expired</string>
+    <string name="temperature_change">Temperature Change</string>
+
+    <string-array name="time_units">
+        <item>minutes</item>
+        <item>hours</item>
+        <item>days</item>
+        <item>months</item>
+    </string-array>
+</resources>
