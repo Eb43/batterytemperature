@@ -1,9 +1,7 @@
 <h1> Android battery temperature</h1>
 
 <p>&#128190; &nbsp Download: <a href="https://github.com/Eb43/batterytemperature/releases/download/v1.0/batterytemperature.apk">https://github.com/Eb43/batterytemperature/releases/download/v1.0/batterytemperature.apk</a> 
-<div>
-<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/screenshots/download.jpg" style="width:700px; display: inline-block; margin-left:30px;"/>
-</div>
+
                
 <p>This Android app that displays the smartphone's battery temperature in real-time. The battery temperature can be seen directly in the notification shade or status bar, offering a quick glance without any efforts.</p>
 
@@ -19,13 +17,14 @@
 </ul>
 
 <div>
-<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" style="width:500px;"/>
+<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" style="width:300px;"/>
+  <img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/4.jpg" style="width:300px; display: inline-block; margin-left:30px;"/>
 </div>
 
 <div>
 <img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" style="width:300px; display: inline-block; margin-left:30px;"/>
   <img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/3.jpg" style="width:300px; display: inline-block; margin-left:30px;"/>
-    <img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/4.jpg" style="width:300px; display: inline-block; margin-left:30px;"/>
+    
 </div>
 
 
