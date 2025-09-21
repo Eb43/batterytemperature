@@ -1,0 +1,1 @@
+Monitoreo de temperatura para evitar sobrecalentamiento y daños

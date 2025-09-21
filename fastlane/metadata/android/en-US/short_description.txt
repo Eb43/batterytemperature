@@ -1,0 +1,1 @@
+Temperature monitor and logging to prevent overheating, damage, and safety risks

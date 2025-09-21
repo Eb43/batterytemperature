@@ -1,0 +1,8 @@
+default_platform(:android)
+
+platform :android do
+  desc "Update metadata only"
+  lane :metadata do
+    # This lane is used by F-Droid to update app metadata
+    puts "Metadata lane - used by F-Droid"
+  end

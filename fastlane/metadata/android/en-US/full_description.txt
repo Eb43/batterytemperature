@@ -1,0 +1,42 @@
+BatteryTemperatureDisplay shows Android phone’s real-time battery temperature. The information is always visible in an icon in the status bar and in a notification, even while you use other apps.
+
+Practical uses of monitoring battery temperature:
+
+    🔥 Overheating detection during gaming or charging
+    Li-ion battery degrades and loses its capacity when heated over 40 degrees Celsius for prolonged time. This can happen during gaming, 4K video recording, wireless charging. Set alarm to immediately get notified before battery gets actually overheated.
+   
+   🧩 Prevent solder cracks under phone's processor
+   Battery is the main channel for phone's process to dumpits heat. When your battery gets over 40 degrees Celsius under heavy load of gaming or video recording, phone processor is melting itself at that moment. Repeated cycles of processor overheating cause its solder to crack, leading to phone unable to boot and work.
+   
+    ⚠Reduce risk of phone li-ion battery fire
+    Reaching 50 degrees Celsius may lead to li-ion thermal runaway and fire. Set an alarm to get alerted before your battery reaches this dangerous threshold. That is especially valuable if you leave your phone charging overnight, alowing to avoid cases of phone getting on fire while everyone in the house sleeps.
+        
+     📊Use old Android as temperature logger
+     Repurpose your old smartphone as temperature logging device to track the environment in your home, 🌱 greenhouse or 🐕 animal barn. Temperature fluctuations affect plant and animal health before they show visual stress signs. Log temperature for any time range - set if for minutes, hours, days, months. Temperature log is produced in timestamped CSV format, allowing for easy analysis in Excel, Google Sheets or any other spreadsheet editor.
+        
+     🏃Heat stroke prevention
+     During outdoor work or sports, let your phone to work as a body temperature monitor.  If your phone reaches +45 °C in your pocket, you're in conditions that can cause heat exhaustion.
+     
+     ❄Body heat conservation
+     Avoid excessive heat loss in cold weather. Phone placed against body shows how effectively your clothing retains heat during cold emergencies.
+     
+     🚗Hot car safety
+     Phone temperature rise in parked car indicates when interior becomes dangerous for children or pets - provides quantified warning beyond "it feels hot."
+     
+     🥶Food safety monitoring 
+     Place your phone in a cooler during camping or power outages to know your food is safe. If the battery temperature rises above +4 °C, your food is entering the danger zone for bacterial growth.
+     
+     🛏Bed assessment 
+     Place your phone between bed sheets and launch temperature logging. The log may highlight your bedding retains too much heat, affecting sleep quality and suggesting bed sheets material changes.
+     
+     🏠Know heat insulation problems
+     Phone temperature varying dramatically in different parts of your house reveals insulation issues. Rooms with poor insulation will cause your phone to heat up or cool down faster.
+     
+     🌡Poor man's thermometer
+     Track ambient temperature of any room with your phone if no dedicated thermometer is available.
+
+
+The Android Battery Temperature app is a tool for anyone who wants to monitor, log, and act on temperature data using nothing more than your own smartphone. The app can be both a safety instrument and a multi-purpose temperature monitoring solution.
+
+
+Created by Eugen Barilyuk EB43 https://eb43.github.io
