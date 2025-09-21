@@ -1,6 +1,6 @@
 <h1> Android battery temperature</h1>
 
-<p>&#128190; &nbsp Download: <a href="https://github.com/Eb43/batterytemperature/blob/main/batterytemperature.apk">https://github.com/Eb43/batterytemperature/blob/main/batterytemperature.apk</a> 
+<p>&#128190; &nbsp Download: <a href="https://github.com/Eb43/batterytemperature/releases/download/v1.0/batterytemperature.apk">https://github.com/Eb43/batterytemperature/releases/download/v1.0/batterytemperature.apk</a> 
 <div>
 <img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/screenshots/download.jpg" style="width:700px; display: inline-block; margin-left:30px;"/>
 </div>
@@ -19,12 +19,13 @@
 </ul>
 
 <div>
-<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/screenshots/Screenshot_20241027_035250.png" style="width:500px;"/>
+<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" style="width:500px;"/>
 </div>
 
 <div>
-<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/screenshots/Screenshot_20241027_035346.png" style="width:300px; display: inline-block; margin-left:30px;"/>
-  <img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/screenshots/Screenshot_20241027_035042.png" style="width:300px; display: inline-block; margin-left:30px;"/>
+<img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" style="width:300px; display: inline-block; margin-left:30px;"/>
+  <img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/3.jpg" style="width:300px; display: inline-block; margin-left:30px;"/>
+    <img alt="android battery thermometer" src="https://raw.githubusercontent.com/Eb43/batterytemperature/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/4.jpg" style="width:300px; display: inline-block; margin-left:30px;"/>
 </div>
 
 
