@@ -15,7 +15,7 @@ Practical uses of monitoring battery temperature:
      Repurpose your old smartphone as temperature logging device to track the environment in your home, 🌱 greenhouse or 🐕 animal barn. Temperature fluctuations affect plant and animal health before they show visual stress signs. Log temperature for any time range - set if for minutes, hours, days, months. Temperature log is produced in timestamped CSV format, allowing for easy analysis in Excel, Google Sheets or any other spreadsheet editor.
         
      🏃Heat stroke prevention
-     During outdoor work or sports, let your phone to work as a body temperature monitor.  If your phone reaches +45 °C in your pocket, you're in conditions that can cause heat exhaustion.
+     During outdoor work or sports, let your phone to work as a body temperature monitor.  If your phone reaches +40 °C in your pocket, you're in conditions that can cause heat exhaustion.
      
      ❄Body heat conservation
      Avoid excessive heat loss in cold weather. Phone placed against body shows how effectively your clothing retains heat during cold emergencies.
