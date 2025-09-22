@@ -1,40 +1,40 @@
-BatteryTemperatureDisplay muestra en tiempo real la temperatura de la batería del teléfono Android. La información siempre es visible en un icono en la barra de estado y en una notificación, incluso mientras se usan otras aplicaciones.
+BatteryTemperatureDisplay muestra en tiempo real la temperatura de la batería del teléfono Android. La información siempre es visible en un icono en la barra de estado y en una notificación, incluso mientras se usan otras aplicaciones.  
 
-Usos prácticos de la monitorización de la temperatura de la batería:
+Usos prácticos de la monitorización de la temperatura de la batería:  
 
-   🔥 Detección de sobrecalentamiento durante juegos o carga
-   La batería Li-ion se degrada y pierde capacidad cuando se calienta por encima de 40 °C durante un tiempo prolongado. Esto puede ocurrir al jugar, grabar vídeo 4K o cargar de forma inalámbrica. Configure una alarma para recibir notificación inmediata antes de que la batería se sobrecaliente realmente.
+🔥 Detección de sobrecalentamiento durante juegos o carga  
+La batería Li-ion se degrada cuando supera los 40 °C por mucho tiempo. Puede ocurrir al jugar, grabar 4K o cargar inalámbricamente. Configure una alarma para recibir aviso inmediato.  
 
-   🧩 Prevención de grietas en la soldadura bajo el procesador del teléfono
-   La batería es el canal principal para que el procesador del teléfono libere su calor. Cuando la batería supera los 40 °C bajo carga pesada de juegos o grabación de vídeo, el procesador literalmente se está fundiendo en ese momento. Los ciclos repetidos de sobrecalentamiento del procesador provocan grietas en la soldadura, lo que impide que el teléfono pueda arrancar y funcionar.
+🧩 Prevención de grietas en la soldadura del procesador  
+La batería disipa calor del procesador. Cuando supera los 40 °C bajo carga, el procesador se sobrecalienta. Ciclos repetidos generan grietas en la soldadura, dejando el teléfono inutilizable.  
 
-   ⚠ Reducción del riesgo de incendio de la batería li-ion del teléfono
-   Alcanzar los 50 °C puede llevar a un descontrol térmico de la batería li-ion y a un incendio. Configure una alarma para ser alertado antes de que la batería alcance este umbral peligroso. Esto es especialmente valioso si deja el teléfono cargando durante la noche, evitando casos en que el dispositivo se incendie mientras todos en la casa duermen.
+⚠ Reducción del riesgo de incendio  
+A 50 °C la batería puede entrar en descontrol térmico e incendiarse. La alarma avisa antes de alcanzar ese umbral. Especialmente útil al cargar de noche.  
 
-   📊 Uso de un viejo Android como registrador de temperatura
-   Reutilice un smartphone antiguo como dispositivo de registro de temperatura para seguir las condiciones en su hogar, 🌱 invernadero o 🐕 establo de animales. Las fluctuaciones de temperatura afectan la salud de plantas y animales antes de que aparezcan signos visibles de estrés. Registre temperatura en cualquier intervalo de tiempo — minutos, horas, días, meses. El registro se genera en formato CSV con marcas de tiempo, lo que permite un análisis sencillo en Excel, Google Sheets u otro editor de hojas de cálculo.
+📊 Uso de un viejo Android como registrador  
+Reutilice un smartphone como registrador de temperatura en 🌱 invernadero o 🐕 establo. Fluctuaciones afectan plantas y animales antes de mostrar síntomas. El registro en CSV con marcas de tiempo permite análisis en Excel o Google Sheets.  
 
-   🏃 Prevención del golpe de calor
-   Durante trabajo al aire libre o deporte, deje que su teléfono funcione como monitor de temperatura corporal. Si su teléfono alcanza +45 °C en el bolsillo, usted está en condiciones que pueden causar agotamiento por calor.
+🏃 Prevención del golpe de calor  
+Al trabajar o hacer deporte al aire libre, si el teléfono en el bolsillo alcanza +40 °C, usted también está en riesgo de agotamiento por calor.  
 
-   ❄ Conservación del calor corporal
-   Evite la pérdida excesiva de calor en clima frío. El teléfono colocado contra el cuerpo muestra qué tan efectivamente su ropa retiene el calor en emergencias de frío.
+❄ Conservación del calor corporal  
+En clima frío, el teléfono contra el cuerpo muestra si su ropa retiene calor suficiente en emergencias.  
 
-   🚗 Seguridad en coche caliente
-   El aumento de temperatura del teléfono en un coche estacionado indica cuándo el interior se vuelve peligroso para niños o mascotas — proporciona una advertencia cuantificada más allá de “se siente caliente”.
+🚗 Seguridad en coche caliente  
+El aumento de temperatura del teléfono estacionado indica cuándo el interior es peligroso para niños o mascotas.  
 
-   🥶 Monitoreo de seguridad alimentaria
-   Coloque el teléfono en una nevera portátil durante campamentos o cortes de energía para saber si su comida está segura. Si la temperatura de la batería supera los +4 °C, los alimentos entran en la zona de peligro para el crecimiento bacteriano.
+🥶 Monitoreo de seguridad alimentaria  
+Coloque el teléfono en una nevera portátil en campamentos o cortes de energía. Si supera +4 °C, la comida entra en zona de riesgo bacteriano.  
 
-   🛏 Evaluación de la cama
-   Coloque el teléfono entre las sábanas y active el registro de temperatura. El registro puede mostrar que la ropa de cama retiene demasiado calor, afectando la calidad del sueño y sugiriendo un cambio de material en las sábanas.
+🛏 Evaluación de la cama  
+Coloque el teléfono entre sábanas y registre la temperatura. El registro revela exceso de calor que afecta el sueño y sugiere cambiar de material.  
 
-   🏠 Identificar problemas de aislamiento térmico
-   Variaciones significativas de la temperatura del teléfono en diferentes partes de la casa revelan problemas de aislamiento. Las habitaciones con mal aislamiento harán que el teléfono se caliente o enfríe más rápido.
+🏠 Identificar problemas de aislamiento  
+Variaciones en distintas habitaciones muestran dónde el aislamiento es deficiente.  
 
-   🌡 Termómetro del pobre
-   Controle la temperatura ambiental de cualquier habitación con su teléfono si no hay un termómetro dedicado disponible.
+🌡 Termómetro del pobre  
+Use el teléfono para medir la temperatura ambiental cuando no haya termómetro dedicado.  
 
-La aplicación Android Battery Temperature es una herramienta para quienes desean monitorizar, registrar y actuar en base a datos de temperatura usando nada más que su propio smartphone. La aplicación puede ser tanto un instrumento de seguridad como una solución multipropósito de control de temperatura.
+Battery Temperature es una herramienta Android para monitorizar, registrar y actuar en base a datos de temperatura solo con su smartphone. Puede ser instrumento de seguridad y solución multipropósito de control térmico.  
 
-Creado por Eugen Barilyuk EB43 https://eb43.github.io
+Creado por Eugen Barilyuk EB43 https://eb43.github.io  
