@@ -32,7 +32,9 @@ public class RollingChartView extends View {
         axisPaint.setStrokeWidth(1f);
 
         textPaint.setColor(0xFF888888);
-        textPaint.setTextSize(20f);
+        // scale text size according to screen density (DPI)
+        float scaledSize = 20f * context.getResources().getDisplayMetrics().scaledDensity* 0.55f;
+        textPaint.setTextSize(scaledSize);
     }
 
     public void addValue(float value) {
@@ -63,14 +65,18 @@ public class RollingChartView extends View {
 
         float w = getWidth();
         float h = getHeight();
-        float dx = (w - 60) / (maxPoints - 1); // leave space for Y labels
-        float chartLeft = 50f;
-        float chartBottom = h - 30f; // leave space for X labels
-        float chartTop = 10f;
+        float yLabelMaxWidth = textPaint.measureText(String.format("%.1f", maxY)); // estimate widest Y label
+
+        float chartLeft = getPaddingLeft() + yLabelMaxWidth + 15f;   // more space for Y labels
+        float chartRight = getWidth() - getPaddingRight() - 25f;     // leave room for last X label
+        float chartBottom = getHeight() - getPaddingBottom() - 30f;  // space for X labels
+        float chartTop = getPaddingTop() + textPaint.getTextSize();  // space for top Y label
+
+        float dx = (chartRight - chartLeft) / (maxPoints - 1);
 
         // --- draw axes ---
         canvas.drawLine(chartLeft, chartTop, chartLeft, chartBottom, axisPaint); // Y axis
-        canvas.drawLine(chartLeft, chartBottom, w, chartBottom, axisPaint); // X axis
+        canvas.drawLine(chartLeft, chartBottom, chartRight, chartBottom, axisPaint); // X axis
 
         // --- Y axis ticks ---
         int yTicks = 3;
@@ -79,17 +85,19 @@ public class RollingChartView extends View {
             float yVal = maxY - frac * (maxY - minY);
             float y = chartTop + frac * (chartBottom - chartTop);
             canvas.drawLine(chartLeft - 5, y, chartLeft, y, axisPaint);
-            canvas.drawText(String.format("%.1f", yVal), 0, y + 5, textPaint);
+            canvas.drawText(String.format("%.1f", yVal), chartLeft - 10f - textPaint.measureText(String.format("%.1f", yVal)), y + textPaint.getTextSize() / 3, textPaint);
         }
 
         // --- X axis ticks (time, seconds ago) ---
         int xTicks = 3;
         for (int i = 0; i <= xTicks; i++) {
             float frac = i / (float) xTicks;
-            float x = chartLeft + frac * (w - chartLeft - 10);
+            float x = chartLeft + frac * (chartRight - chartLeft);
             int secondsAgo = -(maxPoints - 1) * updateInterval + (int)(frac * (maxPoints - 1) * updateInterval);
             canvas.drawLine(x, chartBottom, x, chartBottom + 5, axisPaint);
-            canvas.drawText(secondsAgo + "s", x - 15, h - 5, textPaint);
+            float labelWidth = textPaint.measureText(secondsAgo + "s");
+            float xOffset = (i == 0) ? labelWidth * 0.3f : 0f; // nudge first label slightly right
+            canvas.drawText(secondsAgo + "s", x - labelWidth / 2 + xOffset, h - 5, textPaint);
         }
 
         // --- draw temperature line ---

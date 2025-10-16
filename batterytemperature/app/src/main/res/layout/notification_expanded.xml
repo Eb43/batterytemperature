@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Battery Voltage: 0.0 V"
-        android:textColor="@android:color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="18sp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp" />

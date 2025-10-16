@@ -24,6 +24,8 @@ import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.widget.RemoteViews;
 import android.content.SharedPreferences;
+import androidx.core.app.NotificationCompat;
+import android.app.UiModeManager;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -209,11 +211,19 @@ public class BatteryTempService extends Service {
         boolean isRadioChosenBlack = prefs.getBoolean(RADIO_CHOSEN_BLACK_KEY, true); // Default to true if not set
         int TEXT_COLOR = isRadioChosenBlack ? Color.BLACK : Color.WHITE;
 
+
+        UiModeManager uiModeManager = (UiModeManager) getSystemService(Context.UI_MODE_SERVICE);
+        boolean isDarkMode = (uiModeManager.getNightMode() == UiModeManager.MODE_NIGHT_YES
+                || uiModeManager.getNightMode() == UiModeManager.MODE_NIGHT_AUTO);
+
         RemoteViews notificationExpandedLayout = new RemoteViews(getPackageName(), R.layout.notification_expanded);
         notificationExpandedLayout.setTextViewText(R.id.notification_text_expanded, getString(R.string.battery_temp_with_value, temperatureText));
+        if (isDarkMode) notificationExpandedLayout.setTextColor(R.id.notification_text_expanded, Color.WHITE);
 
         RemoteViews notificationLayout = new RemoteViews(getPackageName(), R.layout.notification);
         notificationLayout.setTextViewText(R.id.notification_text, getCurrentBatteryTemperature() + " ℃ ");
+        if (isDarkMode) notificationLayout.setTextColor(R.id.notification_text, Color.WHITE);
+
 
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
@@ -433,11 +443,11 @@ public class BatteryTempService extends Service {
         stopAlarmIntent.setAction("STOP_ALARM");
         PendingIntent stopPendingIntent = PendingIntent.getService(this, 0, stopAlarmIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
-        Notification alarmNotification = new Notification.Builder(this, "ALARM_CHANNEL")
+        Notification alarmNotification = new NotificationCompat.Builder(this, "ALARM_CHANNEL")
                 .setContentTitle(getString(R.string.temperature_alarm_title))
                 .setContentText(getString(R.string.temperature_alarm_text, currentTemp, threshold))
                 .setSmallIcon(android.R.drawable.ic_dialog_alert)
-                .setPriority(Notification.PRIORITY_HIGH)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setAutoCancel(true)
                 .addAction(android.R.drawable.ic_media_pause, getString(R.string.stop_alarm), stopPendingIntent)
                 .build();
