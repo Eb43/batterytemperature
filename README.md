@@ -1,7 +1,5 @@
 # Android Battery Temperature – Real-Time Monitoring
 
-📥 **Download:** [batterytemperature.apk](https://github.com/Eb43/batterytemperature/releases/download/v1.0/batterytemperature.apk)
-
 BatteryTemperatureDisplay is an Android app that shows your phone’s **real-time battery temperature**.  
 The information is always visible in three places:  
 
@@ -10,6 +8,12 @@ The information is always visible in three places:
 - 📊 As an icon in the status bar, even while you use other apps.  
 
 Monitoring your battery temperature helps prevent overheating, extend battery lifespan, and avoid dangerous situations.  
+
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/barilyuk.batterytemperature/)
+
+Or download the latest APK from the [Releases Section](https://github.com/Eb43/batterytemperature/releases/latest).
 
 ---
 
