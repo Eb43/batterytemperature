@@ -1,0 +1,40 @@
+BatteryTemperatureDisplay, Android telefonunuzun gerçek zamanlı pil sıcaklığını gösterir. Bilgiler, diğer uygulamaları kullanırken bile durum çubuğundaki bir simgede ve bir bildirimde her zaman görünür.
+
+Pil sıcaklığını izlemenin pratik kullanımları:
+
+   🔥 Oyun oynama veya şarj sırasında aşırı ısınma tespiti
+   Lityum iyon pil, uzun süre 40 santigrat derecenin üzerinde ısıtıldığında bozulur ve kapasitesini kaybeder. Bu, oyun sırasında, 4K video kaydı sırasında, kablosuz şarj sırasında olabilir. Pil gerçekten aşırı ısınmadan önce hemen bildirim almak için alarm ayarlayın.
+
+   🧩 Telefonun işlemcisinin altındaki lehim çatlaklarını önleme
+   Pil, telefonun işlemcisinin ısısını boşaltması için ana kanaldır. Piliniz oyun veya video kaydının ağır yükü altında 40 santigrat derecenin üzerine çıktığında, telefon işlemcisi o anda eriyordur. İşlemcinin tekrarlanan aşırı ısınma döngüleri lehiminin çatlamasına neden olur ve telefonun açılamamasına ve çalışamamasına yol açar.
+
+   ⚠️ Telefon lityum iyon pil yangını riskini azaltma
+   50 santigrat dereceye ulaşmak, lityum iyon termal kaçağına ve yangına yol açabilir. Piliniz bu tehlikeli eşiğe ulaşmadan önce uyarı almak için bir alarm ayarlayın. Bu, özellikle telefonunuzu gece boyunca şarj ederken bırakırsanız değerlidir ve evdeki herkes uyurken telefonun alev alması durumlarından kaçınmanıza olanak tanır.
+
+   📊 Eski Android'i sıcaklık kaydedici olarak kullanma
+   Evinizde, 🌱 seranda veya 🐕 hayvan ahırında ortamı izlemek için eski akıllı telefonunuzu sıcaklık kayıt cihazına dönüştürün. Sıcaklık dalgalanmaları, bitki ve hayvan sağlığını görsel stres belirtileri göstermeden önce etkiler. Herhangi bir zaman aralığı için sıcaklık kaydedin - dakikalar, saatler, günler, aylar için ayarlayın. Sıcaklık kaydı zaman damgalı CSV formatında üretilir ve Excel, Google Sheets veya başka herhangi bir elektronik tablo düzenleyicisinde kolay analiz sağlar.
+
+   🏃 Sıcak çarpması önleme
+   Açık havada çalışma veya spor sırasında telefonunuzun vücut sıcaklığı monitörü olarak çalışmasına izin verin. Telefonunuz cebinizde +40 °C'ye ulaşırsa, sıcak tükenmesine neden olabilecek koşullardasınız.
+
+   ❄️ Vücut ısısının korunması
+   Soğuk havada aşırı ısı kaybından kaçının. Vücuda yerleştirilen telefon, soğuk acil durumlarda giysilerinizin ısıyı ne kadar etkili tuttuğunu gösterir.
+
+   🚗 Sıcak araba güvenliği
+   Park edilmiş arabadaki telefon sıcaklık artışı, iç mekanın çocuklar veya evcil hayvanlar için ne zaman tehlikeli hale geldiğini gösterir - "sıcak hissediliyor"un ötesinde ölçülü uyarı sağlar.
+
+   🥶 Gıda güvenliği izleme
+   Kamp sırasında veya elektrik kesintilerinde telefonunuzu bir soğutucuya yerleştirin ve yiyeceğinizin güvenli olduğunu bilin. Pil sıcaklığı +4 °C'nin üzerine çıkarsa, yiyeceğiniz bakteri üremesi için tehlike bölgesine giriyor.
+
+   🛏️ Yatak değerlendirmesi
+   Telefonunuzu yatak çarşafları arasına yerleştirin ve sıcaklık kaydını başlatın. Kayıt, yatak takımınızın çok fazla ısı tuttuğunu, uyku kalitesini etkilediğini ve yatak çarşafı malzemesi değişikliklerini önerdiğini vurgulayabilir.
+
+   🏠 Isı yalıtım sorunlarını öğrenin
+   Evinizin farklı bölümlerinde dramatik şekilde değişen telefon sıcaklığı, yalıtım sorunlarını ortaya çıkarır. Kötü yalıtımlı odalar, telefonunuzun daha hızlı ısınmasına veya soğumasına neden olur.
+
+   🌡️ Fakir adamın termometresi
+   Özel bir termometre yoksa, telefonunuzla herhangi bir odanın ortam sıcaklığını izleyin.
+
+Android Battery Temperature uygulaması, kendi akıllı telefonunuzdan başka bir şey kullanmadan sıcaklık verilerini izlemek, kaydetmek ve bunlara göre hareket etmek isteyen herkes için bir araçtır. Uygulama hem bir güvenlik aracı hem de çok amaçlı bir sıcaklık izleme çözümü olabilir.
+
+Eugen Barilyuk EB43 tarafından oluşturuldu https://eb43.github.io

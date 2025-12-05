@@ -1,0 +1,1 @@
+Monitor temperatury i logowanie zapobiegające przegrzaniu, uszkodzeniom, ryzyku

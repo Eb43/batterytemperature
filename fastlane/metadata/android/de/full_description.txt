@@ -1,0 +1,40 @@
+BatteryTemperatureDisplay zeigt die Echtzeit-Akkutemperatur Ihres Android-Telefons an. Die Information ist immer in einem Symbol in der Statusleiste und in einer Benachrichtigung sichtbar, auch während Sie andere Apps verwenden.
+
+Praktische Anwendungen der Akkutemperaturüberwachung:
+
+   🔥 Überhitzungserkennung beim Spielen oder Laden
+   Lithium-Ionen-Akkus degradieren und verlieren ihre Kapazität, wenn sie längere Zeit über 40 Grad Celsius erhitzt werden. Dies kann beim Spielen oder beim kabellosen Laden geschehen. Stellen Sie einen Alarm ein, um sofort benachrichtigt zu werden, bevor der Akku tatsächlich überhitzt.
+
+   🧩 Vermeidung von Lötrissen unter dem Prozessor des Telefons
+   Der Akku ist der Hauptkanal für die Wärmeableitung des Telefonprozessors. Wenn Ihr Akku unter starker Belastung über 40 Grad Celsius erreicht, schmilzt der Telefonprozessor in diesem Moment. Wiederholte Überhitzungszyklen des Prozessors führen zu Rissen im Lot, wodurch das Telefon nicht mehr starten und funktionieren kann.
+
+   ⚠️ Reduzierung des Brandrisikos des Lithium-Ionen-Akkus des Telefons
+   Das Erreichen von 50 Grad Celsius kann zu thermischem Durchgehen von Lithium-Ionen und Brand führen. Stellen Sie einen Alarm ein, um gewarnt zu werden, bevor Ihr Akku diese gefährliche Schwelle erreicht. Dies ist besonders wertvoll, wenn Sie Ihr Telefon über Nacht laden lassen, um Fälle zu vermeiden, in denen sich das Telefon entzündet, während alle im Haus schlafen.
+
+   📊 Altes Android als Temperaturlogger verwenden
+   Verwandeln Sie Ihr altes Smartphone in ein Temperaturprotokollierungsgerät, um die Umgebung in Ihrem Zuhause, 🌱 Gewächshaus oder 🐕 Tierstall zu überwachen. Temperaturschwankungen beeinflussen die Gesundheit von Pflanzen und Tieren, bevor sie visuelle Stresszeichen zeigen. Das Temperaturprotokoll wird im CSV-Format mit Zeitstempel erstellt und ermöglicht eine einfache Analyse in Excel, Google Sheets oder jedem anderen Tabellenkalkulationsprogramm.
+
+   🏃 Hitzschlagprävention
+   Lassen Sie Ihr Telefon während der Arbeit im Freien oder beim Sport als Körpertemperaturmonitor fungieren. Wenn Ihr Telefon in Ihrer Tasche +40 °C erreicht, befinden Sie sich in Bedingungen, die zu Hitzeerschöpfung führen können.
+
+   ❄️ Körperwärmeerhaltung
+   Vermeiden Sie übermäßigen Wärmeverlust bei kaltem Wetter. Ein am Körper platziertes Telefon zeigt, wie effektiv Ihre Kleidung bei Kältenotfällen Wärme speichert.
+
+   🚗 Heißes Auto-Sicherheit
+   Der Temperaturanstieg des Telefons im geparkten Auto zeigt an, wann der Innenraum für Kinder oder Haustiere gefährlich wird - bietet eine quantifizierte Warnung über "es fühlt sich heiß an" hinaus.
+
+   🥶 Lebensmittelsicherheitsüberwachung
+   Legen Sie Ihr Telefon beim Camping oder bei Stromausfällen in eine Kühlbox, um zu wissen, dass Ihre Lebensmittel sicher sind. Wenn die Akkutemperatur über +4 °C steigt, geraten Ihre Lebensmittel in die Gefahrenzone für Bakterienwachstum.
+
+   🛏️ Bettbewertung
+   Legen Sie Ihr Telefon zwischen Bettlaken und starten Sie die Temperaturprotokollierung. Das Protokoll kann aufzeigen, dass Ihre Bettwäsche zu viel Wärme speichert, die Schlafqualität beeinträchtigt und Änderungen des Bettlakenmaterials nahelegt.
+
+   🏠 Wärmedämmungsprobleme erkennen
+   Dramatisch variierende Telefontemperaturen in verschiedenen Teilen Ihres Hauses zeigen Dämmungsprobleme auf. Räume mit schlechter Dämmung führen dazu, dass sich Ihr Telefon schneller aufheizt oder abkühlt.
+
+   🌡️ Thermometer für den kleinen Mann
+   Verfolgen Sie die Umgebungstemperatur eines beliebigen Raums mit Ihrem Telefon, wenn kein dediziertes Thermometer verfügbar ist.
+
+Die Android Battery Temperature App ist ein Werkzeug für jeden, der Temperaturdaten mit nichts anderem als dem eigenen Smartphone überwachen, protokollieren und darauf reagieren möchte. Die App kann sowohl ein Sicherheitsinstrument als auch eine Mehrzweck-Temperaturüberwachungslösung sein.
+
+Erstellt von Eugen Barilyuk EB43 https://eb43.github.io
