@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Температура батареї</string>
+
+    <!-- Main Activity -->
+    <string name="battery_temperature_label">Температура батареї:</string>
+    <string name="log_for_label">Журналювати:</string>
+    <string name="start_logging">Почати журналювання</string>
+    <string name="stop_logging">Зупинити журналювання</string>
+    <string name="logfilepath">Шлях до файлу журналу: /storage/emulated/0/Download/battery_temperature_log.csv</string>
+    <string name="ring_alarm_at">Сигнал тривоги при:</string>
+    <string name="degrees_celsius">°C</string>
+    <string name="enable_temperature_alarm">Увімкнути температурну тривогу</string>
+    <string name="enable_auto_start">Увімкнути\nавто\nзапуск</string>
+    <string name="kill_app_exit">🚫 ☠ ❌ \n Закрити додаток \n і \n Вийти</string>
+    <string name="notification_icon_text_color">Колір тексту\nзначка сповіщення:</string>
+    <string name="black">Чорний</string>
+    <string name="white">Білий</string>
+    <string name="log_file_prefix">Файл журналу: </string>
+
+    <!-- Validation messages -->
+    <string name="please_enter_duration">Будь ласка, введіть тривалість</string>
+    <string name="please_enter_valid_number">Будь ласка, введіть дійсне число</string>
+    <string name="integer_only_validation">🔢 \n ❌23.7  ❌31.2; \n ✅23 ✅31</string>
+    <string name="log_file_not_found">Файл журналу не знайдено</string>
+    <string name="share_log_file">Поділитися файлом журналу</string>
+    <string name="temperature_logging_finished">Журналювання температури завершено</string>
+
+    <!-- Dialog -->
+    <string name="autostart_permission_title">Потрібен дозвіл на автозапуск</string>
+    <string name="autostart_permission_message">Увімкніть дозвіл на автозапуск, щоб забезпечити надійну роботу сповіщень після перезавантаження.</string>
+    <string name="open_settings">ВІДКРИТИ НАЛАШТУВАННЯ</string>
+    <string name="ok">ОК</string>
+
+    <!-- Service notifications -->
+    <string name="battery_temperature_notification_title">Температура батареї</string>
+    <string name="battery_temp_with_value">🌡 Температура батареї: %1$s</string>
+    <string name="temperature_value_celsius">%1$s</string>
+    <string name="temperature_alarm_title">Температурна тривога!</string>
+    <string name="temperature_alarm_text">Поточна: %1$.1f  (Поріг: %2$.1f)</string>
+    <string name="stop_alarm">Зупинити тривогу</string>
+
+    <!-- Logging events -->
+    <string name="logging_started">Журналювання розпочато</string>
+    <string name="logging_stopped">Журналювання зупинено</string>
+    <string name="logging_expired">Журналювання завершилось</string>
+    <string name="temperature_change">Зміна температури</string>
+
+    <string-array name="time_units">
+        <item>хвилини</item>
+        <item>години</item>
+        <item>дні</item>
+        <item>місяці</item>
+    </string-array>
+
+    <string-array name="temperature_scales">
+        <item>°C</item>
+        <item>°F</item>
+        <item>K</item>
+    </string-array>
+</resources>

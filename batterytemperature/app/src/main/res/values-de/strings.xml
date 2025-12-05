@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Batterietemperatur</string>
+
+    <!-- Main Activity -->
+    <string name="battery_temperature_label">Batterietemperatur:</string>
+    <string name="log_for_label">Protokoll für:</string>
+    <string name="start_logging">Protokollierung starten</string>
+    <string name="stop_logging">Protokollierung stoppen</string>
+    <string name="logfilepath">Protokolldateipfad: /storage/emulated/0/Download/battery_temperature_log.csv</string>
+    <string name="ring_alarm_at">Alarm klingeln bei:</string>
+    <string name="degrees_celsius">°C</string>
+    <string name="enable_temperature_alarm">Temperaturalarm aktivieren</string>
+    <string name="enable_auto_start">Autostart\naktivieren</string>
+    <string name="kill_app_exit">🚫 ☠ ❌ \n App beenden \n &amp; \n verlassen</string>
+    <string name="notification_icon_text_color">Benachrichtigungssymbol-\nTextfarbe:</string>
+    <string name="black">Schwarz</string>
+    <string name="white">Weiß</string>
+    <string name="log_file_prefix">Protokolldatei: </string>
+
+    <!-- Validation messages -->
+    <string name="please_enter_duration">Bitte Dauer eingeben</string>
+    <string name="please_enter_valid_number">Bitte eine gültige Zahl eingeben</string>
+    <string name="integer_only_validation">🔢 \n ❌23.7  ❌31.2; \n ✅23 ✅31</string>
+    <string name="log_file_not_found">Protokolldatei nicht gefunden</string>
+    <string name="share_log_file">Protokolldatei teilen</string>
+    <string name="temperature_logging_finished">Temperaturprotokollierung abgeschlossen</string>
+
+    <!-- Dialog -->
+    <string name="autostart_permission_title">Autostart-Berechtigung erforderlich</string>
+    <string name="autostart_permission_message">Aktivieren Sie die Autostart-Berechtigung, um sicherzustellen, dass Benachrichtigungen nach dem Neustart zuverlässig funktionieren.</string>
+    <string name="open_settings">EINSTELLUNGEN ÖFFNEN</string>
+    <string name="ok">OK</string>
+
+    <!-- Service notifications -->
+    <string name="battery_temperature_notification_title">Batterietemperatur</string>
+    <string name="battery_temp_with_value">🌡 Batterietemperatur: %1$s</string>
+    <string name="temperature_value_celsius">%1$s</string>
+    <string name="temperature_alarm_title">Temperaturalarm</string>
+    <string name="temperature_alarm_text">Aktuell: %1$.1f  (Schwelle: %2$.1f)</string>
+    <string name="stop_alarm">Alarm stoppen</string>
+
+    <!-- Logging events -->
+    <string name="logging_started">Protokollierung gestartet</string>
+    <string name="logging_stopped">Protokollierung gestoppt</string>
+    <string name="logging_expired">Protokollierung abgelaufen</string>
+    <string name="temperature_change">Temperaturänderung</string>
+
+    <string-array name="time_units">
+        <item>Minuten</item>
+        <item>Stunden</item>
+        <item>Tage</item>
+        <item>Monate</item>
+    </string-array>
+
+    <string-array name="temperature_scales">
+        <item>°C</item>
+        <item>°F</item>
+        <item>K</item>
+    </string-array>
+</resources>

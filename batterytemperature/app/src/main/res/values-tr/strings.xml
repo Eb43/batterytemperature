@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Batarya Sıcaklığı</string>
+
+    <!-- Main Activity -->
+    <string name="battery_temperature_label">Batarya sıcaklığı:</string>
+    <string name="log_for_label">Kayıt süresi:</string>
+    <string name="start_logging">Kaydı başlat</string>
+    <string name="stop_logging">Kaydı durdur</string>
+    <string name="logfilepath">Kayıt dosyası yolu: /storage/emulated/0/Download/battery_temperature_log.csv</string>
+    <string name="ring_alarm_at">Alarm çalacağı sıcaklık:</string>
+    <string name="degrees_celsius">°C</string>
+    <string name="enable_temperature_alarm">Sıcaklık alarmını etkinleştir</string>
+    <string name="enable_auto_start">Otomatik\nBaşlatmayı\nEtkinleştir</string>
+    <string name="kill_app_exit">🚫 ☠ ❌ \n Uygulamayı kapat \n &amp; \n çık</string>
+    <string name="notification_icon_text_color">Bildirim simgesi\nmetin rengi:</string>
+    <string name="black">Siyah</string>
+    <string name="white">Beyaz</string>
+    <string name="log_file_prefix">Kayıt dosyası: </string>
+
+    <!-- Validation messages -->
+    <string name="please_enter_duration">Lütfen süreyi girin</string>
+    <string name="please_enter_valid_number">Lütfen geçerli bir sayı girin</string>
+    <string name="integer_only_validation">🔢 \n ❌23.7  ❌31.2; \n ✅23 ✅31</string>
+    <string name="log_file_not_found">Kayıt dosyası bulunamadı</string>
+    <string name="share_log_file">Kayıt dosyasını paylaş</string>
+    <string name="temperature_logging_finished">Sıcaklık kaydı tamamlandı</string>
+
+    <!-- Dialog -->
+    <string name="autostart_permission_title">Otomatik başlatma izni gerekli</string>
+    <string name="autostart_permission_message">Cihaz yeniden başlatıldıktan sonra bildirimlerin güvenilir biçimde çalışması için otomatik başlatma iznini etkinleştirin.</string>
+    <string name="open_settings">AYARLARI AÇ</string>
+    <string name="ok">OK</string>
+
+    <!-- Service notifications -->
+    <string name="battery_temperature_notification_title">Batarya sıcaklığı</string>
+    <string name="battery_temp_with_value">🌡 Batarya sıcaklığı: %1$s</string>
+    <string name="temperature_value_celsius">%1$s</string>
+    <string name="temperature_alarm_title">Sıcaklık Alarmı</string>
+    <string name="temperature_alarm_text">Mevcut: %1$.1f  (Eşik: %2$.1f)</string>
+    <string name="stop_alarm">Alarmı durdur</string>
+
+    <!-- Logging events -->
+    <string name="logging_started">Kayıt başlatıldı</string>
+    <string name="logging_stopped">Kayıt durduruldu</string>
+    <string name="logging_expired">Kayıt süresi doldu</string>
+    <string name="temperature_change">Sıcaklık değişimi</string>
+
+    <string-array name="time_units">
+        <item>dakika</item>
+        <item>saat</item>
+        <item>gün</item>
+        <item>ay</item>
+    </string-array>
+
+    <string-array name="temperature_scales">
+        <item>°C</item>
+        <item>°F</item>
+        <item>K</item>
+    </string-array>
+</resources>

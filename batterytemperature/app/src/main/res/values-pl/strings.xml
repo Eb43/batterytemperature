@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Temperatura baterii</string>
+
+    <!-- Main Activity -->
+    <string name="battery_temperature_label">Temperatura baterii:</string>
+    <string name="log_for_label">Dziennik dla:</string>
+    <string name="start_logging">Rozpocznij rejestrowanie</string>
+    <string name="stop_logging">Zatrzymaj rejestrowanie</string>
+    <string name="logfilepath">Ścieżka pliku dziennika: /storage/emulated/0/Download/battery_temperature_log.csv</string>
+    <string name="ring_alarm_at">Włącz alarm przy:</string>
+    <string name="degrees_celsius">°C</string>
+    <string name="enable_temperature_alarm">Włącz alarm temperatury</string>
+    <string name="enable_auto_start">Włącz\nAuto\nStart</string>
+    <string name="kill_app_exit">🚫 ☠ ❌ \n Zakończ aplikację \n &amp; \n wyjdź</string>
+    <string name="notification_icon_text_color">Kolor tekstu\nikony powiadomień:</string>
+    <string name="black">Czarny</string>
+    <string name="white">Biały</string>
+    <string name="log_file_prefix">Plik dziennika: </string>
+
+    <!-- Validation messages -->
+    <string name="please_enter_duration">Wprowadź czas trwania</string>
+    <string name="please_enter_valid_number">Wprowadź poprawną liczbę</string>
+    <string name="integer_only_validation">🔢 \n ❌23.7  ❌31.2; \n ✅23 ✅31</string>
+    <string name="log_file_not_found">Nie znaleziono pliku dziennika</string>
+    <string name="share_log_file">Udostępnij plik dziennika</string>
+    <string name="temperature_logging_finished">Rejestrowanie temperatury zakończone</string>
+
+    <!-- Dialog -->
+    <string name="autostart_permission_title">Wymagane uprawnienie autostartu</string>
+    <string name="autostart_permission_message">Włącz uprawnienie autostartu, aby powiadomienia działały niezawodnie po ponownym uruchomieniu urządzenia.</string>
+    <string name="open_settings">OTWÓRZ USTAWIENIA</string>
+    <string name="ok">OK</string>
+
+    <!-- Service notifications -->
+    <string name="battery_temperature_notification_title">Temperatura baterii</string>
+    <string name="battery_temp_with_value">🌡 Temperatura baterii: %1$s</string>
+    <string name="temperature_value_celsius">%1$s</string>
+    <string name="temperature_alarm_title">Alarm temperatury</string>
+    <string name="temperature_alarm_text">Aktualnie: %1$.1f  (Próg: %2$.1f)</string>
+    <string name="stop_alarm">Zatrzymaj alarm</string>
+
+    <!-- Logging events -->
+    <string name="logging_started">Rejestrowanie rozpoczęte</string>
+    <string name="logging_stopped">Rejestrowanie zatrzymane</string>
+    <string name="logging_expired">Rejestrowanie wygasło</string>
+    <string name="temperature_change">Zmiana temperatury</string>
+
+    <string-array name="time_units">
+        <item>minuty</item>
+        <item>godziny</item>
+        <item>dni</item>
+        <item>miesiące</item>
+    </string-array>
+
+    <string-array name="temperature_scales">
+        <item>°C</item>
+        <item>°F</item>
+        <item>K</item>
+    </string-array>
+</resources>
