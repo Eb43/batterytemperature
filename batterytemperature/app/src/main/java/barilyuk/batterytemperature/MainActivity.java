@@ -84,6 +84,9 @@ public class MainActivity extends Activity {
     private MediaPlayer alarmPlayer;
     private boolean isAlarmPlaying = false;
 
+    private Spinner temperatureScaleSpinner;
+    private static final String TEMP_SCALE_KEY = "TempScale";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,7 +94,88 @@ public class MainActivity extends Activity {
 
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
+
+        temperatureScaleSpinner = findViewById(R.id.temperatureScaleSpinner);
+        String[] scales = getResources().getStringArray(R.array.temperature_scales);
+
+        ArrayAdapter<String> scaleAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, scales) {
+            @Override
+            public View getView(int position, View convertView, android.view.ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView textView = (TextView) view.findViewById(android.R.id.text1);
+                if (textView != null) {
+                    textView.setTextSize(40); // Size when spinner is closed
+                }
+                return view;
+            }
+
+            @Override
+            public View getDropDownView(int position, View convertView, android.view.ViewGroup parent) {
+                View view = super.getDropDownView(position, convertView, parent);
+                TextView textView = (TextView) view.findViewById(android.R.id.text1);
+                if (textView != null) {
+                    textView.setTextSize(32); // Size in dropdown list
+                }
+                return view;
+            }
+        };
+
+        scaleAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        temperatureScaleSpinner.setAdapter(scaleAdapter);
+
+
+// Load saved scale
+        String savedScale = prefs.getString(TEMP_SCALE_KEY, "°C");
+        int scalePosition = 0;
+        for (int i = 0; i < scales.length; i++) {
+            if (scales[i].equals(savedScale)) {
+                scalePosition = i;
+                break;
+            }
+        }
+        temperatureScaleSpinner.setSelection(scalePosition);
+
+// Save scale when changed
+        temperatureScaleSpinner.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(android.widget.AdapterView<?> parent, View view, int position, long id) {
+                String selectedScale = parent.getItemAtPosition(position).toString();
+                SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
+                editor.putString(TEMP_SCALE_KEY, selectedScale);
+                editor.apply();
+
+                tempChart.setTempScale(selectedScale);
+
+                // Update loggerTempScale TextView
+                TextView loggerTempScale = findViewById(R.id.loggerTempScale);
+                loggerTempScale.setText(" " + getScaleSymbol(selectedScale));
+
+                // Notify service to update notification
+                Intent intent = new Intent(MainActivity.this, BatteryTempService.class);
+                intent.setAction("UPDATE_NOTIFICATION");
+                startService(intent);
+
+                // Update threshold display when scale changes
+                float savedThresholdCelsius = prefs.getFloat(TEMP_THRESHOLD_KEY, 50.0f);
+                float displayThreshold = savedThresholdCelsius;
+                if (selectedScale.equals("°F") || selectedScale.equals("F")) {
+                    displayThreshold = savedThresholdCelsius * 9f / 5f + 32f;
+                } else if (selectedScale.equals("K")) {
+                    displayThreshold = savedThresholdCelsius + 273.15f;
+                }
+                temperatureThresholdEditText.setText(String.valueOf((int)displayThreshold));
+            }
+
+            @Override
+            public void onNothingSelected(android.widget.AdapterView<?> parent) {}
+        });
+
+
+
         tempChart = findViewById(R.id.tempChart);
+
+        tempChart.setTempScale(savedScale);
 
         durationEditText = findViewById(R.id.durationEditText);
         timeUnitSpinner = findViewById(R.id.timeUnitSpinner);
@@ -105,8 +189,15 @@ public class MainActivity extends Activity {
         // Setup temperature threshold
         temperatureThresholdEditText = findViewById(R.id.temperatureThresholdEditText);
         //SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        float savedThreshold = prefs.getFloat(TEMP_THRESHOLD_KEY, 50.0f);
-        temperatureThresholdEditText.setText(String.valueOf((int)savedThreshold));
+        float savedThresholdCelsius = prefs.getFloat(TEMP_THRESHOLD_KEY, 50.0f);
+        String scale = prefs.getString(TEMP_SCALE_KEY, "°C");
+        float displayThreshold = savedThresholdCelsius;
+        if (scale.equals("°F") || scale.equals("F")) {
+            displayThreshold = savedThresholdCelsius * 9f / 5f + 32f;
+        } else if (scale.equals("K")) {
+            displayThreshold = savedThresholdCelsius + 273.15f;
+        }
+        temperatureThresholdEditText.setText(String.valueOf((int)displayThreshold));
 
 // Save threshold when user changes it and validate for integers only
         temperatureThresholdEditText.addTextChangedListener(new TextWatcher() {
@@ -390,17 +481,21 @@ public class MainActivity extends Activity {
         @Override
         public void run() {
             float batteryTemperature = BatteryUtils.getBatteryTemperatureFloat(MainActivity.this);
-            temperatureTextView.setText("\uD83C\uDF21 " + batteryTemperature + " ℃");
+
+            SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+            String scale = prefs.getString(TEMP_SCALE_KEY, "°C");
+            String displayTemp = convertTemperature(batteryTemperature, scale);
+
+            temperatureTextView.setText("🌡 " + displayTemp);
             temperatureTextView.setTextColor(colors[colorIndex]);
             colorIndex = (colorIndex + 1) % colors.length;
 
-// update chart
+            // Update chart with Celsius value (core logic unchanged)
             tempChart.addValue(batteryTemperature);
 
-            handler.postDelayed(this, 2000); // update every 1 sec
+            handler.postDelayed(this, 2000);
         }
     };
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
@@ -466,9 +561,36 @@ public class MainActivity extends Activity {
             String thresholdStr = temperatureThresholdEditText.getText().toString().trim();
             if (!thresholdStr.isEmpty()) {
                 int threshold = Integer.parseInt(thresholdStr);
-                if (threshold >= 0 && threshold <= 90) {
-                    SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
-                    editor.putFloat(TEMP_THRESHOLD_KEY, (float)threshold);
+
+                // Convert threshold to Celsius based on current scale
+                SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+                String scale = prefs.getString(TEMP_SCALE_KEY, "°C");
+
+                float thresholdInCelsius = threshold;
+                boolean isValid = false;
+
+                if (scale.equals("°F") || scale.equals("F")) {
+                    // -30°C = -22°F, 60°C = 140°F
+                    if (threshold >= -22 && threshold <= 140) {
+                        thresholdInCelsius = (float) (Math.round(((threshold - 32f) * 5f / 9f) * 10f) / 10f);
+                        isValid = true;
+                    }
+                } else if (scale.equals("K")) {
+                    // -30°C = 243K, 60°C = 333K
+                    if (threshold >= 243 && threshold <= 333) {
+                        thresholdInCelsius = (float) (Math.round((threshold - 273.15f) * 10f) / 10f);
+                        isValid = true;
+                    }
+                } else {
+                    // Celsius: -30 to 60
+                    if (threshold >= -30 && threshold <= 60) {
+                        isValid = true;
+                    }
+                }
+
+                if (isValid) {
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putFloat(TEMP_THRESHOLD_KEY, thresholdInCelsius);
                     editor.apply();
                 }
             }
@@ -478,6 +600,24 @@ public class MainActivity extends Activity {
         }
     }
 
+
+    private String convertTemperature(float celsius, String scale) {
+        if (scale.equals("°F") || scale.equals("F")) {
+            int fahrenheit = Math.round(celsius * 9f / 5f + 32f);
+            return fahrenheit + " ";
+        } else if (scale.equals("K")) {
+            int kelvin = Math.round(celsius + 273.15f);
+            return kelvin + " ";
+        } else {
+            return String.format("%.1f ", celsius);
+        }
+    }
+
+    private String getScaleSymbol(String scale) {
+        if (scale.equals("°F") || scale.equals("F")) return "°F";
+        if (scale.equals("K")) return "K";
+        return "°C";
+    }
 
     @Override
     protected void onDestroy() {

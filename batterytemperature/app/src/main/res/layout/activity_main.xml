@@ -14,7 +14,7 @@
         android:id="@+id/eb43githubio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Eugen Barilyuk\neb43.github.io"
+        android:text="Eugen Barilyuk     eb43.github.io"
         android:textAlignment="center"
         android:textColor="#7B7F80"
         android:textSize="14sp"
@@ -53,20 +53,41 @@
         app:layout_constraintTop_toBottomOf="@+id/appIcon"
         app:layout_constraintVertical_bias="0.168" />
 
-    <TextView
-        android:id="@+id/temperatureTextView"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/temperatureRowContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="152dp"
-        android:text="🌡 -1 ℃ "
-        android:textAlignment="center"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/batvoltageTextView"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/temperatureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌡 -1 ℃ "
+            android:textAlignment="center"
+            android:textSize="40sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/temperatureScaleSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:minWidth="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            app:layout_constraintStart_toEndOf="@id/temperatureTextView"
+            app:layout_constraintTop_toTopOf="@id/temperatureTextView"
+            app:layout_constraintBottom_toBottomOf="@id/temperatureTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <barilyuk.batterytemperature.RollingChartView
         android:id="@+id/tempChart"
@@ -74,7 +95,7 @@
         android:layout_height="65dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temperatureTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/temperatureRowContainer" />
 
     <LinearLayout
         android:id="@+id/parent_linear_layout"
@@ -162,6 +183,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/loggerTempScale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" °C"

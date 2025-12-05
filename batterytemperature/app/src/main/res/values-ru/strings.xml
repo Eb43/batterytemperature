@@ -33,16 +33,16 @@
     
     <!-- Service notifications -->
     <string name="battery_temperature_notification_title">Температура батареи</string>
-    <string name="battery_temp_with_value">🌡 Температура батареи: %1$s ℃</string>
-    <string name="temperature_value_celsius">%1$s ℃</string>
-    <string name="temperature_alarm_title">Сигнал Температуры!</string>
-    <string name="temperature_alarm_text">Текущая: %1$.1f°C (Порог: %2$.1f°C)</string>
+    <string name="battery_temp_with_value">🌡 Температура батареи: %1$s</string>
+    <string name="temperature_value_celsius">%1$s</string>
+    <string name="temperature_alarm_title">Тревога Температуры!</string>
+    <string name="temperature_alarm_text">Текущая: %1$.1f (Порог: %2$.1f)</string>
     <string name="stop_alarm">Остановить Сигнал</string>
     
     <!-- Logging events -->
     <string name="logging_started">Запись Начата</string>
     <string name="logging_stopped">Запись Остановлена</string>
-    <string name="logging_expired">Запись Истекла</string>
+    <string name="logging_expired">Запись Окончена</string>
     <string name="temperature_change">Изменение Температуры</string>
 
     <string-array name="time_units">
@@ -50,5 +50,11 @@
         <item>часов</item>
         <item>дней</item>
         <item>месяцев</item>
+    </string-array>
+
+    <string-array name="temperature_scales">
+        <item>°C</item>
+        <item>°F</item>
+        <item>K</item>
     </string-array>
 </resources>

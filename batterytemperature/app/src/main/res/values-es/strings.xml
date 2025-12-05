@@ -33,10 +33,10 @@
     
     <!-- Service notifications -->
     <string name="battery_temperature_notification_title">Temperatura de batería</string>
-    <string name="battery_temp_with_value">🌡 Temperatura de batería: %1$s ℃</string>
-    <string name="temperature_value_celsius">%1$s ℃</string>
+    <string name="battery_temp_with_value">🌡 Temperatura de batería: %1$s </string>
+    <string name="temperature_value_celsius">%1$s</string>
     <string name="temperature_alarm_title">¡Alarma de Temperatura!</string>
-    <string name="temperature_alarm_text">Actual: %1$.1f°C (Límite: %2$.1f°C)</string>
+    <string name="temperature_alarm_text">Actual: %1$.1f (Límite: %2$.1f)</string>
     <string name="stop_alarm">Detener Alarma</string>
     
     <!-- Logging events -->
@@ -50,5 +50,11 @@
         <item>horas</item>
         <item>días</item>
         <item>meses</item>
+    </string-array>
+
+    <string-array name="temperature_scales">
+        <item>°C</item>
+        <item>°F</item>
+        <item>K</item>
     </string-array>
 </resources>

@@ -43,7 +43,7 @@ public class BatteryTempService extends Service {
     private static final String CHANNEL_ID = "BateryTempChannel";
     private static final int NOTIFICATION_ID = 1;
     private static final String TAG = "BatteryTempService";
-
+    private static final String TEMP_SCALE_KEY = "TempScale";
     private BroadcastReceiver batteryReceiver;
     private Handler handler;
     private Runnable runnable;
@@ -206,40 +206,37 @@ public class BatteryTempService extends Service {
     private Notification createNotification(String temperatureText) {
         Log.d(TAG, "createNotification: Creating notification with temperature: " + temperatureText);
 
-
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        boolean isRadioChosenBlack = prefs.getBoolean(RADIO_CHOSEN_BLACK_KEY, true); // Default to true if not set
+        boolean isRadioChosenBlack = prefs.getBoolean(RADIO_CHOSEN_BLACK_KEY, true);
         int TEXT_COLOR = isRadioChosenBlack ? Color.BLACK : Color.WHITE;
+        String scale = prefs.getString(TEMP_SCALE_KEY, "°C");
 
+        // Convert temperature for display
+        float celsius = Float.parseFloat(temperatureText);
+        String displayTemp = convertTemperature(celsius, scale);
 
         UiModeManager uiModeManager = (UiModeManager) getSystemService(Context.UI_MODE_SERVICE);
         boolean isDarkMode = (uiModeManager.getNightMode() == UiModeManager.MODE_NIGHT_YES
                 || uiModeManager.getNightMode() == UiModeManager.MODE_NIGHT_AUTO);
 
         RemoteViews notificationExpandedLayout = new RemoteViews(getPackageName(), R.layout.notification_expanded);
-        notificationExpandedLayout.setTextViewText(R.id.notification_text_expanded, getString(R.string.battery_temp_with_value, temperatureText));
+        notificationExpandedLayout.setTextViewText(R.id.notification_text_expanded, getString(R.string.battery_temp_with_value, displayTemp));
         if (isDarkMode) notificationExpandedLayout.setTextColor(R.id.notification_text_expanded, Color.WHITE);
 
         RemoteViews notificationLayout = new RemoteViews(getPackageName(), R.layout.notification);
-        notificationLayout.setTextViewText(R.id.notification_text, getCurrentBatteryTemperature() + " ℃ ");
+        notificationLayout.setTextViewText(R.id.notification_text, displayTemp);
         if (isDarkMode) notificationLayout.setTextColor(R.id.notification_text, Color.WHITE);
-
 
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
-// Remove anything that is not part of the number (digits, minus sign, dot)
-        String numericPart = temperatureText.replaceAll("[^\\d.-]", "");
-// Parse float safely
-        float temp = Float.parseFloat(numericPart);
-// Take only the integer part
-        int tempInt = (int) temp;
-// Convert to string
+        // For icon, extract numeric part from displayTemp
+        String numericPart = displayTemp.replaceAll("[^\\d.-]", "");
+        int tempInt = Math.round(Float.parseFloat(numericPart));
         String shorttemperatureText = String.valueOf(tempInt);
 
         Bitmap temperatureBitmap = BitmapUtils.textToBitmap(shorttemperatureText, TEXT_COLOR);
         Icon icon = Icon.createWithBitmap(temperatureBitmap);
-
 
         return new Notification.Builder(this, CHANNEL_ID)
                 .setCustomContentView(notificationLayout)
@@ -249,7 +246,6 @@ public class BatteryTempService extends Service {
                 .setCustomBigContentView(notificationExpandedLayout)
                 .setStyle(new Notification.DecoratedCustomViewStyle())
                 .build();
-
     }
 
     private void updateNotification() {
@@ -319,7 +315,7 @@ public class BatteryTempService extends Service {
 
         Log.d(TAG, "Stopped logging");
 
-        Intent broadcastIntent = new Intent("LOGGING_FINISHED");
+        Intent broadcastIntent = new Intent(getString(R.string.temperature_logging_finished));
         sendBroadcast(broadcastIntent);
     }
 
@@ -337,7 +333,13 @@ public class BatteryTempService extends Service {
         try {
             File logFile = new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), "battery_temperature_log.csv");
 
-            // Create header if file doesn't exist
+            SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+            String scale = prefs.getString(TEMP_SCALE_KEY, "°C");
+
+            // Convert temperature for logging
+            float celsius = Float.parseFloat(temperature);
+            String displayTemp = convertTemperature(celsius, scale);
+
             if (!logFile.exists()) {
                 FileWriter writer = new FileWriter(logFile, false);
                 writer.append("Date,Time,Temperature,Event\n");
@@ -351,7 +353,6 @@ public class BatteryTempService extends Service {
             String time = timeFormat.format(now);
 
             String translatedEvent = event;
-            // Translate common events
             if ("Logging Started".equals(event)) {
                 translatedEvent = getString(R.string.logging_started);
             } else if ("Logging Stopped".equals(event)) {
@@ -362,7 +363,7 @@ public class BatteryTempService extends Service {
                 translatedEvent = getString(R.string.temperature_change);
             }
 
-            String logEntry = date + "," + time + "," + temperature + "," + event + "\n";
+            String logEntry = date + "," + time + "," + displayTemp + "," + translatedEvent + "\n";
 
             FileWriter writer = new FileWriter(logFile, true);
             writer.append(logEntry);
@@ -374,6 +375,17 @@ public class BatteryTempService extends Service {
         }
     }
 
+    private String convertTemperature(float celsius, String scale) {
+        if (scale.equals("°F") || scale.equals("F")) {
+            int fahrenheit = Math.round(celsius * 9f / 5f + 32f);
+            return fahrenheit + " °F";
+        } else if (scale.equals("K")) {
+            int kelvin = Math.round(celsius + 273.15f);
+            return kelvin + " K";
+        } else {
+            return String.format("%.1f", celsius) + " °C";
+        }
+    }
 
     private void checkTemperatureAlarm(float currentTemp) {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
@@ -432,6 +444,12 @@ public class BatteryTempService extends Service {
     }
 
     private void showAlarmNotification(float currentTemp, float threshold) {
+        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        String scale = prefs.getString(TEMP_SCALE_KEY, "°C");
+
+        String displayTemp = convertTemperature(currentTemp, scale);
+        String displayThreshold = convertTemperature(threshold, scale);
+
         NotificationChannel alarmChannel = new NotificationChannel(
                 "ALARM_CHANNEL",
                 getString(R.string.temperature_alarm_title),
@@ -443,9 +461,12 @@ public class BatteryTempService extends Service {
         stopAlarmIntent.setAction("STOP_ALARM");
         PendingIntent stopPendingIntent = PendingIntent.getService(this, 0, stopAlarmIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
+        // Build alarm text manually to avoid format string issues
+        String alarmText = "Temperature " + displayTemp + " exceeds threshold " + displayThreshold;
+
         Notification alarmNotification = new NotificationCompat.Builder(this, "ALARM_CHANNEL")
                 .setContentTitle(getString(R.string.temperature_alarm_title))
-                .setContentText(getString(R.string.temperature_alarm_text, currentTemp, threshold))
+                .setContentText(alarmText)
                 .setSmallIcon(android.R.drawable.ic_dialog_alert)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setAutoCancel(true)

@@ -9,6 +9,8 @@ import android.view.View;
 import java.util.LinkedList;
 
 public class RollingChartView extends View {
+
+    private String tempScale = "°C";
     private final LinkedList<Float> values = new LinkedList<>();
     private final Paint linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Path path = new Path();
@@ -65,30 +67,36 @@ public class RollingChartView extends View {
 
         float w = getWidth();
         float h = getHeight();
-        float yLabelMaxWidth = textPaint.measureText(String.format("%.1f", maxY)); // estimate widest Y label
 
-        float chartLeft = getPaddingLeft() + yLabelMaxWidth + 15f;   // more space for Y labels
-        float chartRight = getWidth() - getPaddingRight() - 25f;     // leave room for last X label
-        float chartBottom = getHeight() - getPaddingBottom() - 30f;  // space for X labels
-        float chartTop = getPaddingTop() + textPaint.getTextSize();  // space for top Y label
+        // Convert min/max for display
+        float displayMinY = convertTemp(minY);
+        float displayMaxY = convertTemp(maxY);
+
+        float yLabelMaxWidth = textPaint.measureText(String.format("%.0f", displayMaxY));
+
+        float chartLeft = getPaddingLeft() + yLabelMaxWidth + 15f;
+        float chartRight = getWidth() - getPaddingRight() - 25f;
+        float chartBottom = getHeight() - getPaddingBottom() - 30f;
+        float chartTop = getPaddingTop() + textPaint.getTextSize();
 
         float dx = (chartRight - chartLeft) / (maxPoints - 1);
 
-        // --- draw axes ---
-        canvas.drawLine(chartLeft, chartTop, chartLeft, chartBottom, axisPaint); // Y axis
-        canvas.drawLine(chartLeft, chartBottom, chartRight, chartBottom, axisPaint); // X axis
+        // Draw axes
+        canvas.drawLine(chartLeft, chartTop, chartLeft, chartBottom, axisPaint);
+        canvas.drawLine(chartLeft, chartBottom, chartRight, chartBottom, axisPaint);
 
-        // --- Y axis ticks ---
+        // Y axis ticks (display converted values)
         int yTicks = 3;
         for (int i = 0; i <= yTicks; i++) {
             float frac = i / (float) yTicks;
-            float yVal = maxY - frac * (maxY - minY);
+            float yVal = displayMaxY - frac * (displayMaxY - displayMinY);
             float y = chartTop + frac * (chartBottom - chartTop);
             canvas.drawLine(chartLeft - 5, y, chartLeft, y, axisPaint);
-            canvas.drawText(String.format("%.1f", yVal), chartLeft - 10f - textPaint.measureText(String.format("%.1f", yVal)), y + textPaint.getTextSize() / 3, textPaint);
+            String label = String.format("%.0f", yVal);
+            canvas.drawText(label, chartLeft - 10f - textPaint.measureText(label), y + textPaint.getTextSize() / 3, textPaint);
         }
 
-        // --- X axis ticks (time, seconds ago) ---
+        // X axis ticks
         int xTicks = 3;
         for (int i = 0; i <= xTicks; i++) {
             float frac = i / (float) xTicks;
@@ -96,11 +104,11 @@ public class RollingChartView extends View {
             int secondsAgo = -(maxPoints - 1) * updateInterval + (int)(frac * (maxPoints - 1) * updateInterval);
             canvas.drawLine(x, chartBottom, x, chartBottom + 5, axisPaint);
             float labelWidth = textPaint.measureText(secondsAgo + "s");
-            float xOffset = (i == 0) ? labelWidth * 0.3f : 0f; // nudge first label slightly right
+            float xOffset = (i == 0) ? labelWidth * 0.3f : 0f;
             canvas.drawText(secondsAgo + "s", x - labelWidth / 2 + xOffset, h - 5, textPaint);
         }
 
-        // --- draw temperature line ---
+        // Draw temperature line (using original Celsius values for positioning)
         path.reset();
         for (int i = 0; i < values.size(); i++) {
             float x = chartLeft + i * dx;
@@ -113,5 +121,21 @@ public class RollingChartView extends View {
             }
         }
         canvas.drawPath(path, linePaint);
+    }
+
+
+
+    public void setTempScale(String scale) {
+        this.tempScale = scale;
+        invalidate();
+    }
+
+    private float convertTemp(float celsius) {
+        if (tempScale.equals("°F") || tempScale.equals("F")) {
+            return celsius * 9f / 5f + 32f;
+        } else if (tempScale.equals("K")) {
+            return celsius + 273.15f;
+        }
+        return celsius;
     }
 }
