@@ -1,1 +1,0 @@
-﻿Monitor de temperatura e registro para prevenir superaquecimento, danos e riscos
