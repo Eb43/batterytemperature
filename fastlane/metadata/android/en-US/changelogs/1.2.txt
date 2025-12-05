@@ -1,0 +1,3 @@
+V1.2 changes:
+
+• Added option to get temperature data in Celsius, Fahrenheit, Kelvin temperature scales.
