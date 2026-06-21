@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Температура Батареи</string>
+    <string name="app_name">Battempa</string>
     
     <!-- Main Activity -->
     <string name="battery_temperature_label">Температура Батареи:</string>
     <string name="log_for_label">Записать:</string>
     <string name="start_logging">Начать Запись</string>
     <string name="stop_logging">Остановить Запись</string>
-    <string name="logfilepath">Путь к файлу записи: /storage/emulated/0/Download/battery_temperature_log.csv</string>
+    <string name="logfilepath">📁 Путь к файлу записи: /storage/emulated/0/Download/battery_temperature_log.csv</string>
     <string name="ring_alarm_at">Сигнал при:</string>
     <string name="degrees_celsius">°C</string>
     <string name="enable_temperature_alarm">Включить сигнал температуры</string>
@@ -15,7 +15,7 @@
     <string name="notification_icon_text_color">Цвет текста значка\nуведомления:</string>
     <string name="black">Чёрный</string>
     <string name="white">Белый</string>
-    <string name="log_file_prefix">Файл логов: </string>
+    <string name="log_file_prefix">"📁 Файл логов: "</string>
     
     <!-- Validation messages -->
     <string name="please_enter_duration">Пожалуйста, введите продолжительность</string>
@@ -57,4 +57,6 @@
         <item>°F</item>
         <item>K</item>
     </string-array>
+    <string name="eb43githubio">Евгений Барилюк     eb43.github.io</string>
+    <string name="iconTextScale">"Размер текста в иконке: "</string>
 </resources>

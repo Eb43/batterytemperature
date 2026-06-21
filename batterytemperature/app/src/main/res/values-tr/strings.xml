@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Batarya Sıcaklığı</string>
+    <string name="app_name">Battempa</string>
 
     <!-- Main Activity -->
     <string name="battery_temperature_label">Batarya sıcaklığı:</string>
     <string name="log_for_label">Kayıt süresi:</string>
     <string name="start_logging">Kaydı başlat</string>
     <string name="stop_logging">Kaydı durdur</string>
-    <string name="logfilepath">Kayıt dosyası yolu: /storage/emulated/0/Download/battery_temperature_log.csv</string>
+    <string name="logfilepath">📁 Kayıt dosyası yolu: /storage/emulated/0/Download/battery_temperature_log.csv</string>
     <string name="ring_alarm_at">Alarm çalacağı sıcaklık:</string>
     <string name="degrees_celsius">°C</string>
     <string name="enable_temperature_alarm">Sıcaklık alarmını etkinleştir</string>
@@ -15,7 +15,7 @@
     <string name="notification_icon_text_color">Bildirim simgesi\nmetin rengi:</string>
     <string name="black">Siyah</string>
     <string name="white">Beyaz</string>
-    <string name="log_file_prefix">Kayıt dosyası: </string>
+    <string name="log_file_prefix">"📁 Kayıt dosyası: "</string>
 
     <!-- Validation messages -->
     <string name="please_enter_duration">Lütfen süreyi girin</string>
@@ -57,4 +57,6 @@
         <item>°F</item>
         <item>K</item>
     </string-array>
+    <string name="eb43githubio">Eugen Barilyuk     eb43.github.io</string>
+    <string name="iconTextScale">"Simge metni boyutu: "</string>
 </resources>

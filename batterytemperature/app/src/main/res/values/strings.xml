@@ -1,12 +1,13 @@
 <resources>
-    <string name="app_name">Battery Temperature</string>
+    <string name="app_name">Battempa</string>
+    <string name="eb43githubio">Eugen Barilyuk     eb43.github.io</string>
 
     <!-- Main Activity -->
     <string name="battery_temperature_label">Battery Temperature:</string>
     <string name="log_for_label">Log for:</string>
     <string name="start_logging">Start Logging</string>
     <string name="stop_logging">Stop Logging</string>
-    <string name="logfilepath">Log file path: /storage/emulated/0/Download/battery_temperature_log.csv</string>
+    <string name="logfilepath">📁 Log file path: /storage/emulated/0/Download/battery_temperature_log.csv</string>
     <string name="ring_alarm_at">Ring alarm at:</string>
     <string name="degrees_celsius">°C</string>
     <string name="enable_temperature_alarm">Enable temperature alarm</string>
@@ -15,7 +16,8 @@
     <string name="notification_icon_text_color">Notification icon\ntext color:</string>
     <string name="black">Black</string>
     <string name="white">White</string>
-    <string name="log_file_prefix">Log file: </string>
+    <string name="log_file_prefix">"📁 Log file: "</string>
+    <string name="iconTextScale">Icon text size:</string>
 
     <!-- Validation messages -->
     <string name="please_enter_duration">Please enter duration</string>

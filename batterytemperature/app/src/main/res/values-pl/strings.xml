@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Temperatura baterii</string>
+    <string name="app_name">Battempa</string>
 
     <!-- Main Activity -->
     <string name="battery_temperature_label">Temperatura baterii:</string>
     <string name="log_for_label">Dziennik dla:</string>
     <string name="start_logging">Rozpocznij rejestrowanie</string>
     <string name="stop_logging">Zatrzymaj rejestrowanie</string>
-    <string name="logfilepath">Ścieżka pliku dziennika: /storage/emulated/0/Download/battery_temperature_log.csv</string>
+    <string name="logfilepath">📁 Ścieżka pliku dziennika: /storage/emulated/0/Download/battery_temperature_log.csv</string>
     <string name="ring_alarm_at">Włącz alarm przy:</string>
     <string name="degrees_celsius">°C</string>
     <string name="enable_temperature_alarm">Włącz alarm temperatury</string>
@@ -15,7 +15,7 @@
     <string name="notification_icon_text_color">Kolor tekstu\nikony powiadomień:</string>
     <string name="black">Czarny</string>
     <string name="white">Biały</string>
-    <string name="log_file_prefix">Plik dziennika: </string>
+    <string name="log_file_prefix">"📁 Plik dziennika: "</string>
 
     <!-- Validation messages -->
     <string name="please_enter_duration">Wprowadź czas trwania</string>
@@ -57,4 +57,6 @@
         <item>°F</item>
         <item>K</item>
     </string-array>
+    <string name="eb43githubio">Eugen Barilyuk     eb43.github.io</string>
+    <string name="iconTextScale">"Rozmiar tekstu ikony: "</string>
 </resources>

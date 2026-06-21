@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Температура батареї</string>
+    <string name="app_name">Battempa</string>
 
     <!-- Main Activity -->
     <string name="battery_temperature_label">Температура батареї:</string>
@@ -12,10 +12,10 @@
     <string name="enable_temperature_alarm">Увімкнути температурну тривогу</string>
     <string name="enable_auto_start">Увімкнути\nавто\nзапуск</string>
     <string name="kill_app_exit">🚫 ☠ ❌ \n Закрити додаток \n і \n Вийти</string>
-    <string name="notification_icon_text_color">Колір тексту\nзначка сповіщення:</string>
+    <string name="notification_icon_text_color">📁 Шлях до файлу журналу: /storage/emulated/0/Download/battery_temperature_log.csv</string>
     <string name="black">Чорний</string>
     <string name="white">Білий</string>
-    <string name="log_file_prefix">Файл журналу: </string>
+    <string name="log_file_prefix">"📁 Файл журналу: "</string>
 
     <!-- Validation messages -->
     <string name="please_enter_duration">Будь ласка, введіть тривалість</string>
@@ -57,4 +57,6 @@
         <item>°F</item>
         <item>K</item>
     </string-array>
+    <string name="eb43githubio">Євген Барилюк     eb43.github.io</string>
+    <string name="iconTextScale">Розмір тексту в іконці:</string>
 </resources>

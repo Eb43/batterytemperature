@@ -147,7 +147,7 @@
         android:padding="6dp"
         android:text="@string/logfilepath"
         android:textColor="?android:attr/textColorPrimary"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
@@ -196,6 +196,46 @@
             android:layout_marginStart="16dp"
             android:text="@string/enable_temperature_alarm"
             android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/iconScaleRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperatureAlarmRow">
+
+        <TextView
+            android:id="@+id/iconTextScale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Icon text size:"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/iconScaleMinusButton"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/iconScaleTextView"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="100%"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/iconScalePlusButton"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="+" />
 
     </LinearLayout>
 
