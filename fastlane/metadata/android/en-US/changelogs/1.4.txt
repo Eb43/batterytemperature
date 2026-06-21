@@ -1,0 +1,3 @@
+V1.3 changes:
+
+• Added text size scaling in notification icon.
