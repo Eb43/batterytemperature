@@ -10,9 +10,9 @@ import android.os.Build;
 
 public class BitmapUtils {
 
-    public static Bitmap textToBitmap(String text, int textColor) {
+    public static Bitmap textToBitmap(String text, int textColor, float scaleFactor) {
         //int textColor = Color.BLACK;
-        int textSize = 120;
+        int textSize = Math.max(1, Math.round(120 * scaleFactor));
         Paint numberPaint = new Paint();
         numberPaint.setTextSize(textSize);
         numberPaint.setColor(textColor);

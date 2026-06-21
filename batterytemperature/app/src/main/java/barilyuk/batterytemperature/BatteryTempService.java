@@ -70,6 +70,8 @@ public class BatteryTempService extends Service {
 
     private float lastTriggeredThreshold = -999f;
 
+    private static final String ICON_SCALE_KEY = "IconScale";
+
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -235,7 +237,15 @@ public class BatteryTempService extends Service {
         int tempInt = Math.round(Float.parseFloat(numericPart));
         String shorttemperatureText = String.valueOf(tempInt);
 
-        Bitmap temperatureBitmap = BitmapUtils.textToBitmap(shorttemperatureText, TEXT_COLOR);
+        //Bitmap temperatureBitmap = BitmapUtils.textToBitmap(shorttemperatureText, TEXT_COLOR);
+        int iconScalePercent = prefs.getInt(ICON_SCALE_KEY, 100);
+
+        Bitmap temperatureBitmap =
+                BitmapUtils.textToBitmap(
+                        shorttemperatureText,
+                        TEXT_COLOR,
+                        iconScalePercent / 100f
+                );
         Icon icon = Icon.createWithBitmap(temperatureBitmap);
 
         return new Notification.Builder(this, CHANNEL_ID)

@@ -86,6 +86,10 @@ public class MainActivity extends Activity {
 
     private Spinner temperatureScaleSpinner;
     private static final String TEMP_SCALE_KEY = "TempScale";
+    private static final String ICON_SCALE_KEY = "IconScale";
+    private TextView iconScaleTextView;
+    private Button iconScaleMinusButton;
+    private Button iconScalePlusButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +98,51 @@ public class MainActivity extends Activity {
 
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
+
+        iconScaleTextView = findViewById(R.id.iconScaleTextView);
+        iconScaleMinusButton = findViewById(R.id.iconScaleMinusButton);
+        iconScalePlusButton = findViewById(R.id.iconScalePlusButton);
+
+        final int[] iconScalePercent = {
+                prefs.getInt(ICON_SCALE_KEY, 100)
+        };
+
+        iconScaleTextView.setText(iconScalePercent[0] + "%");
+        iconScaleMinusButton.setOnClickListener(v -> {
+            if (iconScalePercent[0] > 1) {
+                iconScalePercent[0]--;
+
+                iconScaleTextView.setText(iconScalePercent[0] + "%");
+
+                SharedPreferences.Editor editor =
+                        getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
+
+                editor.putInt(ICON_SCALE_KEY, iconScalePercent[0]);
+                editor.apply();
+
+                Intent intent = new Intent(MainActivity.this, BatteryTempService.class);
+                intent.setAction("UPDATE_NOTIFICATION");
+                startService(intent);
+            }
+        });
+
+        iconScalePlusButton.setOnClickListener(v -> {
+            if (iconScalePercent[0] < 300) {
+                iconScalePercent[0]++;
+
+                iconScaleTextView.setText(iconScalePercent[0] + "%");
+
+                SharedPreferences.Editor editor =
+                        getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
+
+                editor.putInt(ICON_SCALE_KEY, iconScalePercent[0]);
+                editor.apply();
+
+                Intent intent = new Intent(MainActivity.this, BatteryTempService.class);
+                intent.setAction("UPDATE_NOTIFICATION");
+                startService(intent);
+            }
+        });
 
         temperatureScaleSpinner = findViewById(R.id.temperatureScaleSpinner);
         String[] scales = getResources().getStringArray(R.array.temperature_scales);
