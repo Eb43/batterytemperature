@@ -1,6 +1,7 @@
-# Android Battery Temperature – Real-Time Monitoring
+# Battempa
+## Android Battery Temperature – Real-Time Monitoring
 
-BatteryTemperatureDisplay is an Android app that shows your phone’s **real-time battery temperature**.  
+Battempa (BatteryTemperatureDisplay) is an Android app that shows your phone’s **real-time battery temperature**.  
 The information is always visible in three places:  
 
 - 📱 On the app’s main screen.  
